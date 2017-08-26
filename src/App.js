@@ -30,7 +30,7 @@ class App extends Component {
 		    var top = r * Math.pow((1+r),n);
 		    var bottom = (Math.pow((1+r),n))-1;
 		    var m = formData.formPrinciple * (top/bottom);
-		    this.refs.calc_result.innerHTML = 'Result: '+ m.toFixed(2);
+		    this.refs.calc_result.innerHTML = 'Amount: '+ m.toFixed(2)+' per month';
 	    }else{
 		    return false;
 	    }
@@ -72,11 +72,22 @@ class App extends Component {
                         </tr>
                     </tbody>
                 </table>
-            </form>
+                </form>
+	            <div className="googleads">
+		            <ins className='adsbygoogle'
+			                 style={{ display: 'block' }}
+			                 data-ad-client='ca-pub-3843092897548350'
+			                 data-ad-slot='2922850236'
+			                 data-ad-format='auto' />
+	            </div>
             </div>
           </div>
         );
     }
+	
+	componentDidMount () {
+		(window.adsbygoogle = window.adsbygoogle || []).push({});
+	}
 }
 
 export default App;
